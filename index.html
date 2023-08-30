@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./github.png">
+    <title>Not-Spotify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body class="container-fluid h-auto" data-bs-theme="dark" style="font-family: 'Courier New', Courier, monospace;">
+      
+
+      <div class="card text-center h-100">
+        <div class="card-header">
+          <select id="musicSelect" style="font-weight: bold;">
+            <option value="" selected>Select</option>
+            <option value="trauma.mp3">Trauma</option>
+            <option value="asyoufadeaway.mp3">As You Fade Away</option>
+            <option value="wolves.m4a">Wolves</option>
+            <option value="dandelions.mp3">Dandelions</option>
+            <option value="saygoodbye.mp3">Say Goodbye</option>
+            <option value="icantsleep.flac">I can't sleep</option>
+            <option value="blurrynights.m4a">Blurry Nights</option>
+            <option value="eyesblue.m4a">Eyes blue like atlantis</option>
+          </select><br>
+          <div class="btn-group gap-2 p-2">
+            <button class="btn btn-dark" id="playlist"><i class="fa fa-plus-square"></i></button>
+            <button class="btn btn-dark" id="reset"><i class="fa fa-rotate-right"></i></button>
+            <button class="btn btn-dark" id="add"><i class="fa fa-upload"></i></button>
+            <input type="file" id="fileInput" accept=".mp3,.m4a,.flac" class="visually-hidden">
+          </div>
+          
+        </div>
+
+        
+
+        <div class="card-body">
+          <br><img src="./cover.jpg" alt="" class="img-fluid" id="cover"><br><br>
+          <audio id="myAudio" controls>
+            <source id="audioSource" src="" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="card-footer text-body-secondary">
+          <div class="">
+
+            <div class="container text-center">
+              <div class="row align-items-start" style="font-weight: bold;">
+                <div class="col">
+                  <span>Volume: </span>
+                </div>
+                <div class="col">
+                  <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1">
+                </div>
+                <div class="col">
+                  <span id="volume">100%</span>
+                </div>
+              </div>
+
+              <div class="row align-items-center" style="font-weight: bold;">
+                <div class="col">
+                  <span>Time: </span>
+                </div>
+                <div class="col">
+                  <input type="range" id="timeSlider" min="0" max="" value="0" step="1">
+                </div>
+                <div class="col">
+                  <span id="currentTime">0:00</span>
+                </div>
+              </div>
+            </div>
+            <br><br>
+            <div class="btn-group gap-2">
+              <button id="back" class="btn btn-dark"><i class="fa fa-backward"></i></button>
+              <button class="btn btn-dark" id="playButton"><i class="fa fa-play"></i></button>
+              <button id="pauseButton" class="btn btn-dark"><i class="fa fa-pause"></i></button>
+              <button id="muteButton" class="btn btn-dark">Mute</button>
+              <button id="next" class="btn btn-dark"><i class="fa fa-forward"></i></button>
+            </div>
+            
+            <br><br>
+            
+            <h4>My Play List</h4>
+            <ol id="myPlayList">You haven't make a playlist</ol>
+          </div>
+        </div>
+      </div>
+      
+</body>
+<script src="./sound.js"></script>
+</html>
